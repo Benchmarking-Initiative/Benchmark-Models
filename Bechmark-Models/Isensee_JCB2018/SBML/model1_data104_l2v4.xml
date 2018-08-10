@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="PKA_cycle">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1" constant="true"/>
+      <compartment id="nuc" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="AC" name="AC" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pAC" name="pAC" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="AC_Fsk" name="AC:Fsk" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pAC_Fsk" name="pAC:Fsk" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="cAMP" name="cAMP" compartment="cyt" initialConcentration="0.0575218758977949" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Csub" name="C" compartment="cyt" initialConcentration="0.192051405433538" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Csub_H89" name="C:H89" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RII_C_2" name="RII_2:C_2" compartment="cyt" initialConcentration="0.514562213223039" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_C_2" name="pRII_2:C_2" compartment="cyt" initialConcentration="0.287974352643203" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_cAMP_C_2" name="pRII_2:C_2:cAMP_4" compartment="cyt" initialConcentration="0.00541202870022029" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_cAMP_2" name="pRII_2:cAMP_4" compartment="cyt" initialConcentration="0.000400416634006059" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Sp8_Br_cAMPS" name="Sp8-Br-cAMPS" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rp8_Br_cAMPS" name="Rp-8-Br-cAMPS" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rp8_pCPT_cAMPS" name="Rp-8-pCPT-cAMPS" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Rp_cAMPS" name="Rp-cAMPS" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_Rp8_Br_cAMPS_C_2" name="pRII_2:C_2:Rp-8-Br-cAMPS_4" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_Rp8_pCPT_cAMPS_C_2" name="pRII_2:C_2:Rp-8-pCPT-cAMPS_4" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_Rp_cAMPS_C_2" name="pRII_2:C_2:Rp-cAMPS_4" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_Sp8_Br_cAMPS_C_2" name="pRII_2:C_2:Sp-8-Br-cAMPS_4" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_Sp8_Br_cAMPS_2" name="pRII_2:Sp-8-Br-cAMPS_4" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RIIp_2" name="pRII_2" compartment="cyt" initialConcentration="0.133979505944916" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="RII_2" name="RII_2" compartment="cyt" initialConcentration="0.057671482854616" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IBMX" name="IBMX" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="PDE" name="PDE" compartment="cyt" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pPDE" name="pPDE" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="AC_total" value="1" constant="true"/>
+      <parameter id="KD_Fsk" value="14.2656743301721" constant="true"/>
+      <parameter id="KD_H89" value="0.0480736009761681" constant="true"/>
+      <parameter id="KD_IBMX" value="11.9768989891142" constant="true"/>
+      <parameter id="KD_PDE_Csub" value="0" constant="true"/>
+      <parameter id="KD_cAMP" value="2.84986906175302" constant="true"/>
+      <parameter id="PDE_total" value="1" constant="true"/>
+      <parameter id="RII2_total" value="1" constant="true"/>
+      <parameter id="b_pRII_global" value="99.7217778967635" constant="true"/>
+      <parameter id="kdeg_cAMP" value="1.00032978441703e-05" constant="true"/>
+      <parameter id="kdeg_cAMP_free" value="7.35892283451732" constant="true"/>
+      <parameter id="kdp_AC" value="0" constant="true"/>
+      <parameter id="kf_Fsk" value="999.991987450139" constant="true"/>
+      <parameter id="kf_H89" value="0.000741493422675392" constant="true"/>
+      <parameter id="kf_PDE_Csub" value="0" constant="true"/>
+      <parameter id="kf_RII_2__RII_C_2" value="1.26077939273477" constant="true"/>
+      <parameter id="kf_RII_C_2__RII_2" value="0.0187262534054505" constant="true"/>
+      <parameter id="kf_RII_C_2__RIIp_C_2" value="0.0227841500487899" constant="true"/>
+      <parameter id="kf_RIIp_2__RII_2" value="0.0323066621451248" constant="true"/>
+      <parameter id="kf_RIIp_C_2__RII_C_2" value="0.0256808704479994" constant="true"/>
+      <parameter id="kf_RIIp_cAMP_C_2__RIIp_2" value="0.104924782853171" constant="true"/>
+      <parameter id="kf_cAMP" value="0.49762030092122" constant="true"/>
+      <parameter id="ki_IBMX" value="999.99999996515" constant="true"/>
+      <parameter id="ki_Rp8_Br_cAMPS_pAB" value="6.39991617125844" constant="true"/>
+      <parameter id="ki_Rp8_pCPT_cAMPS_pAB" value="9.24294887100985" constant="true"/>
+      <parameter id="ki_Rp_cAMPS_pAB" value="0.0163472838984393" constant="true"/>
+      <parameter id="ki_Sp8_Br_cAMPS_AM" value="0.131083036712545" constant="true"/>
+      <parameter id="kp_AC" value="0" constant="true"/>
+      <parameter id="ks_AC_cAMP" value="0.423299046028554" constant="true"/>
+      <parameter id="rel_open" value="0.232764114977018" constant="true"/>
+      <parameter id="s_pRII_JI09_150330_Drg353_351_CycNuc" value="0.93462879582213" constant="true"/>
+      <parameter id="s_pRII_global" value="2205.15492853024" constant="true"/>
+      <parameter id="sigma_pRII" value="0.0420436289656355" constant="true"/>
+      <parameter id="xi_AC_cAMP_Fsk" value="640.551657640036" constant="true"/>
+      <parameter id="xi_KD_Rp8_Br_cAMPS" value="0.040150612333366" constant="true"/>
+      <parameter id="xi_KD_Rp8_pCPT_cAMPS" value="0.194630402579553" constant="true"/>
+      <parameter id="xi_KD_Rp_cAMPS" value="0.163369645426461" constant="true"/>
+      <parameter id="xi_KD_Sp8_Br_cAMPS" value="0.222276461349335" constant="true"/>
+      <parameter id="xi_b_Rp8_Br_cAMPS" value="0.0408695544562406" constant="true"/>
+      <parameter id="xi_b_Rp8_pCPT_cAMPS" value="0.0268897774883765" constant="true"/>
+      <parameter id="xi_b_Rp_cAMPS" value="0.607960299288444" constant="true"/>
+      <parameter id="xi_b_Sp8_Br_cAMPS" value="21.7551956731725" constant="true"/>
+      <parameter id="xi_i_Rp8_Br_cAMPS_pAB" value="1" constant="true"/>
+      <parameter id="xi_i_Rp8_pCPT_cAMPS_pAB" value="1" constant="true"/>
+      <parameter id="xi_i_Rp_cAMPS_pAB" value="1" constant="true"/>
+      <parameter id="xi_i_Sp8_Br_cAMPS_AM" value="1" constant="true"/>
+      <parameter id="xi_kf_RII_2__RII_C_2" value="0.0189295042137343" constant="true"/>
+      <parameter id="xi_kf_RII_C_2__RII_2" value="0.811223214879921" constant="true"/>
+      <parameter id="xi_pAC" value="1" constant="true"/>
+      <parameter id="xi_pPDE" value="1" constant="true"/>
+      <parameter id="xi_rel_open" value="0.749660486959971" constant="true"/>
+      <parameter id="pRII_JI09_150330_Drg351_CycNuc" value="1" constant="false"/>
+      <parameter id="pRII_JI09_150330_Drg352_CycNuc" value="1" constant="false"/>
+      <parameter id="pRII_JI09_150330_Drg353_CycNuc" value="1" constant="false"/>
+      <parameter id="Fsk" value="0" constant="false"/>
+      <parameter id="IBMXex" value="0" constant="false"/>
+      <parameter id="DMSO" value="0" constant="false"/>
+      <parameter id="H89" value="0" constant="false"/>
+      <parameter id="Sp8_Br_cAMPS_AM" value="0" constant="false"/>
+      <parameter id="Rp8_Br_cAMPS_pAB" value="0" constant="false"/>
+      <parameter id="Rp8_pCPT_cAMPS_pAB" value="0" constant="false"/>
+      <parameter id="Rp_cAMPS_pAB" value="0.016" constant="false"/>
+      <parameter id="fourABnOH" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="Fsk">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn type="integer"> 10 </cn>
+            <piecewise>
+              <piece>
+                <cn type="integer"> 0 </cn>
+                <apply>
+                  <lt/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn type="integer"> 30 </cn>
+                  </apply>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <cn type="integer"> 1 </cn>
+              </otherwise>
+            </piecewise>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="IBMXex">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="DMSO">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="H89">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Sp8_Br_cAMPS_AM">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Rp8_Br_cAMPS_pAB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Rp8_pCPT_cAMPS_pAB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Rp_cAMPS_pAB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <cn> 0.016 </cn>
+            <piecewise>
+              <piece>
+                <cn type="integer"> 0 </cn>
+                <apply>
+                  <lt/>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <cn type="integer"> 1 </cn>
+              </otherwise>
+            </piecewise>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="fourABnOH">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <cn type="integer"> 0 </cn>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pRII_JI09_150330_Drg351_CycNuc">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> s_pRII_JI09_150330_Drg353_351_CycNuc </ci>
+            <apply>
+              <plus/>
+              <ci> b_pRII_global </ci>
+              <apply>
+                <times/>
+                <ci> s_pRII_global </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_cAMP_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_Sp8_Br_cAMPS_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> rel_open </ci>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_C_2 </ci>
+                      <ci> RIIp_Rp_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_Br_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_pCPT_cAMPS_C_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_cAMP_C_2 </ci>
+                      <ci> RIIp_Sp8_Br_cAMPS_C_2 </ci>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> rel_open </ci>
+                      <apply>
+                        <times/>
+                        <ci> xi_rel_open </ci>
+                        <apply>
+                          <minus/>
+                          <ci> rel_open </ci>
+                          <cn type="integer"> 1 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pRII_JI09_150330_Drg352_CycNuc">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> s_pRII_JI09_150330_Drg353_351_CycNuc </ci>
+            <apply>
+              <plus/>
+              <ci> b_pRII_global </ci>
+              <apply>
+                <times/>
+                <ci> s_pRII_global </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_cAMP_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_Sp8_Br_cAMPS_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> rel_open </ci>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_C_2 </ci>
+                      <ci> RIIp_Rp_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_Br_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_pCPT_cAMPS_C_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_cAMP_C_2 </ci>
+                      <ci> RIIp_Sp8_Br_cAMPS_C_2 </ci>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> rel_open </ci>
+                      <apply>
+                        <times/>
+                        <ci> xi_rel_open </ci>
+                        <apply>
+                          <minus/>
+                          <ci> rel_open </ci>
+                          <cn type="integer"> 1 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="pRII_JI09_150330_Drg353_CycNuc">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> s_pRII_JI09_150330_Drg353_351_CycNuc </ci>
+            <apply>
+              <plus/>
+              <ci> b_pRII_global </ci>
+              <apply>
+                <times/>
+                <ci> s_pRII_global </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_cAMP_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> RIIp_Sp8_Br_cAMPS_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <ci> rel_open </ci>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_C_2 </ci>
+                      <ci> RIIp_Rp_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_Br_cAMPS_C_2 </ci>
+                      <ci> RIIp_Rp8_pCPT_cAMPS_C_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <cn type="integer"> 2 </cn>
+                    <apply>
+                      <plus/>
+                      <ci> RIIp_cAMP_C_2 </ci>
+                      <ci> RIIp_Sp8_Br_cAMPS_C_2 </ci>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <ci> rel_open </ci>
+                      <apply>
+                        <times/>
+                        <ci> xi_rel_open </ci>
+                        <apply>
+                          <minus/>
+                          <ci> rel_open </ci>
+                          <cn type="integer"> 1 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Sp8_Br_cAMPS" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sp8_Br_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> ki_Sp8_Br_cAMPS_AM </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> Sp8_Br_cAMPS </ci>
+                <apply>
+                  <times/>
+                  <ci> Sp8_Br_cAMPS_AM </ci>
+                  <ci> xi_i_Sp8_Br_cAMPS_AM </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Rp8_Br_cAMPS" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp8_Br_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> ki_Rp8_Br_cAMPS_pAB </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> Rp8_Br_cAMPS </ci>
+                <apply>
+                  <times/>
+                  <ci> Rp8_Br_cAMPS_pAB </ci>
+                  <ci> xi_i_Rp8_Br_cAMPS_pAB </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Rp8_pCPT_cAMPS" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp8_pCPT_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> ki_Rp8_pCPT_cAMPS_pAB </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> Rp8_pCPT_cAMPS </ci>
+                <apply>
+                  <times/>
+                  <ci> Rp8_pCPT_cAMPS_pAB </ci>
+                  <ci> xi_i_Rp8_pCPT_cAMPS_pAB </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfProducts>
+          <speciesReference species="Rp_cAMPS" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> ki_Rp_cAMPS_pAB </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> Rp_cAMPS </ci>
+                <apply>
+                  <times/>
+                  <ci> Rp_cAMPS_pAB </ci>
+                  <ci> xi_i_Rp_cAMPS_pAB </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfProducts>
+          <speciesReference species="IBMX" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IBMX"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> ki_IBMX </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> IBMX </ci>
+                <ci> IBMXex </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="AC" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC_Fsk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> AC </ci>
+              <ci> Fsk </ci>
+              <ci> kf_Fsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="AC_Fsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> AC_Fsk </ci>
+              <ci> KD_Fsk </ci>
+              <ci> kf_Fsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAC" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAC_Fsk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Fsk </ci>
+              <ci> kf_Fsk </ci>
+              <ci> pAC </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_v_8" name="v_8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAC_Fsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAC" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_Fsk </ci>
+              <ci> kf_Fsk </ci>
+              <ci> pAC_Fsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v10_v_9" name="v_9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="AC" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAC" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Csub"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> AC </ci>
+              <ci> Csub </ci>
+              <ci> kp_AC </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v11_v_10" name="v_10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="AC_Fsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pAC_Fsk" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Csub"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> AC_Fsk </ci>
+              <ci> Csub </ci>
+              <ci> kp_AC </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v12_v_11" name="v_11" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAC" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> kdp_AC </ci>
+              <ci> pAC </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v13_v_12" name="v_12" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pAC_Fsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AC_Fsk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> kdp_AC </ci>
+              <ci> pAC_Fsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v14_v_13" name="v_13" reversible="false">
+        <listOfProducts>
+          <speciesReference species="cAMP" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AC"/>
+          <modifierSpeciesReference species="pAC"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> ks_AC_cAMP </ci>
+              <apply>
+                <plus/>
+                <ci> AC </ci>
+                <apply>
+                  <times/>
+                  <ci> pAC </ci>
+                  <ci> xi_pAC </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v15_v_14" name="v_14" reversible="false">
+        <listOfProducts>
+          <speciesReference species="cAMP" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="AC_Fsk"/>
+          <modifierSpeciesReference species="pAC_Fsk"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> ks_AC_cAMP </ci>
+              <ci> xi_AC_cAMP_Fsk </ci>
+              <apply>
+                <plus/>
+                <ci> AC_Fsk </ci>
+                <apply>
+                  <times/>
+                  <ci> pAC_Fsk </ci>
+                  <ci> xi_pAC </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v16_v_15" name="v_15" reversible="false">
+        <listOfReactants>
+          <speciesReference species="cAMP" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IBMX"/>
+          <modifierSpeciesReference species="PDE"/>
+          <modifierSpeciesReference species="pPDE"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> KD_IBMX </ci>
+                  <ci> cAMP </ci>
+                  <ci> kdeg_cAMP_free </ci>
+                  <apply>
+                    <plus/>
+                    <ci> PDE </ci>
+                    <apply>
+                      <times/>
+                      <ci> pPDE </ci>
+                      <ci> xi_pPDE </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> IBMX </ci>
+                  <ci> KD_IBMX </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v17_v_16" name="v_16" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RII_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RII_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RII_C_2 </ci>
+              <ci> kf_RII_C_2__RII_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v18_v_17" name="v_17" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RII_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RII_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Csub </ci>
+              <ci> RII_2 </ci>
+              <ci> kf_RII_2__RII_C_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v19_v_18" name="v_18" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> kf_RII_C_2__RII_2 </ci>
+              <ci> xi_kf_RII_C_2__RII_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v20_v_19" name="v_19" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Csub </ci>
+              <ci> RIIp_2 </ci>
+              <ci> kf_RII_2__RII_C_2 </ci>
+              <ci> xi_kf_RII_2__RII_C_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v21_v_20" name="v_20" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RII_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_2 </ci>
+              <ci> kf_RIIp_2__RII_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v22_v_21" name="v_21" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RII_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RII_C_2 </ci>
+              <ci> kf_RII_C_2__RIIp_C_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v23_v_22" name="v_22" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RII_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> kf_RIIp_C_2__RII_C_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v24_v_23" name="v_23" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_cAMP_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="cAMP"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> cAMP </ci>
+              <ci> kf_cAMP </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v25_v_24" name="v_24" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_cAMP_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_cAMP_C_2 </ci>
+              <ci> kf_cAMP </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v26_v_25" name="v_25" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_cAMP_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IBMX"/>
+          <modifierSpeciesReference species="PDE"/>
+          <modifierSpeciesReference species="pPDE"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> KD_IBMX </ci>
+                  <ci> RIIp_cAMP_C_2 </ci>
+                  <ci> kdeg_cAMP </ci>
+                  <apply>
+                    <plus/>
+                    <ci> PDE </ci>
+                    <apply>
+                      <times/>
+                      <ci> pPDE </ci>
+                      <ci> xi_pPDE </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> IBMX </ci>
+                  <ci> KD_IBMX </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v27_v_26" name="v_26" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_cAMP_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RIIp_cAMP_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_cAMP_C_2 </ci>
+              <ci> kf_RIIp_cAMP_C_2__RIIp_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v28_v_27" name="v_27" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_cAMP_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_cAMP_2 </ci>
+              <ci> kf_cAMP </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v29_v_28" name="v_28" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_cAMP_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IBMX"/>
+          <modifierSpeciesReference species="PDE"/>
+          <modifierSpeciesReference species="pPDE"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> KD_IBMX </ci>
+                  <ci> RIIp_cAMP_2 </ci>
+                  <ci> kdeg_cAMP </ci>
+                  <apply>
+                    <plus/>
+                    <ci> PDE </ci>
+                    <apply>
+                      <times/>
+                      <ci> pPDE </ci>
+                      <ci> xi_pPDE </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> IBMX </ci>
+                  <ci> KD_IBMX </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v30_v_29" name="v_29" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_Rp8_Br_cAMPS_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp8_Br_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> Rp8_Br_cAMPS </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp8_Br_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v31_v_30" name="v_30" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Rp8_Br_cAMPS_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_Rp8_Br_cAMPS_C_2 </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp8_Br_cAMPS </ci>
+              <ci> xi_KD_Rp8_Br_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v32_v_31" name="v_31" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_Rp8_pCPT_cAMPS_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp8_pCPT_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> Rp8_pCPT_cAMPS </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp8_pCPT_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v33_v_32" name="v_32" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Rp8_pCPT_cAMPS_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_Rp8_pCPT_cAMPS_C_2 </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp8_pCPT_cAMPS </ci>
+              <ci> xi_KD_Rp8_pCPT_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v34_v_33" name="v_33" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_Rp_cAMPS_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Rp_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> Rp_cAMPS </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v35_v_34" name="v_34" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Rp_cAMPS_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_Rp_cAMPS_C_2 </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Rp_cAMPS </ci>
+              <ci> xi_KD_Rp_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v36_v_35" name="v_35" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_Sp8_Br_cAMPS_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Sp8_Br_cAMPS"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_C_2 </ci>
+              <ci> Sp8_Br_cAMPS </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Sp8_Br_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v37_v_36" name="v_36" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Sp8_Br_cAMPS_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_C_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_Sp8_Br_cAMPS_C_2 </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Sp8_Br_cAMPS </ci>
+              <ci> xi_KD_Sp8_Br_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v38_v_37" name="v_37" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Sp8_Br_cAMPS_C_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub" stoichiometry="1"/>
+          <speciesReference species="RIIp_Sp8_Br_cAMPS_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> RIIp_Sp8_Br_cAMPS_C_2 </ci>
+              <ci> kf_RIIp_cAMP_C_2__RIIp_2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v39_v_38" name="v_38" reversible="false">
+        <listOfReactants>
+          <speciesReference species="RIIp_Sp8_Br_cAMPS_2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RIIp_2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_cAMP </ci>
+              <ci> RIIp_Sp8_Br_cAMPS_2 </ci>
+              <ci> kf_cAMP </ci>
+              <ci> xi_b_Sp8_Br_cAMPS </ci>
+              <ci> xi_KD_Sp8_Br_cAMPS </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v40_v_39" name="v_39" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Csub" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub_H89" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Csub </ci>
+              <ci> H89 </ci>
+              <ci> kf_H89 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v41_v_40" name="v_40" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Csub_H89" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Csub" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Csub_H89 </ci>
+              <ci> KD_H89 </ci>
+              <ci> kf_H89 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v42_v_41" name="v_41" reversible="false">
+        <listOfReactants>
+          <speciesReference species="PDE" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pPDE" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="Csub"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> Csub </ci>
+              <ci> PDE </ci>
+              <ci> kf_PDE_Csub </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v43_v_42" name="v_42" reversible="false">
+        <listOfReactants>
+          <speciesReference species="pPDE" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PDE" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> KD_PDE_Csub </ci>
+              <ci> kf_PDE_Csub </ci>
+              <ci> pPDE </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

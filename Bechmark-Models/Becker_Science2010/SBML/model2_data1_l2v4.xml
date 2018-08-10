@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="epo_binding">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="default" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="___dummy___" name="___dummy___" compartment="default" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="init_Epo" value="1347.49002726616" constant="true"/>
+      <parameter id="init_EpoR_rel" value="0.0920515472124696" constant="true"/>
+      <parameter id="kD" value="141.873075308313" constant="true"/>
+      <parameter id="sd_Epo_bound" value="0.0397464690032998" constant="true"/>
+      <parameter id="Epo_bound" value="1" constant="false"/>
+      <parameter id="epo_bound" value="0.868172968178595" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="epo_bound">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              </apply>
+              <ci> init_Epo </ci>
+              <ci> init_EpoR_rel </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> kD </ci>
+              <apply>
+                <power/>
+                <cn type="integer"> 10 </cn>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Epo_bound">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <log/>
+            <logbase>
+              <cn type="integer"> 10 </cn>
+            </logbase>
+            <ci> epo_bound </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+  </model>
+</sbml>

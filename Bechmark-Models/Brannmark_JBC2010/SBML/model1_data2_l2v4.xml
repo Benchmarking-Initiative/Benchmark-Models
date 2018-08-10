@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="model_Mif">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="IR" name="IR" compartment="cyt" initialConcentration="9.94957642787569" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRins" name="IRins" compartment="cyt" initialConcentration="0.0173972221725393" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRp" name="IRp" compartment="cyt" initialConcentration="1.7629010620181e-09" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRiP" name="IRiP" compartment="cyt" initialConcentration="1.11590026152296e-05" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRi" name="IRi" compartment="cyt" initialConcentration="0.0330151891862681" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRS" name="IRS" compartment="cyt" initialConcentration="9.86699348701367" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IRSiP" name="IRSiP" compartment="cyt" initialConcentration="0.133006512986336" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="XX" name="X" compartment="cyt" initialConcentration="9.99984199487351" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="XXp" name="Xp" compartment="cyt" initialConcentration="0.000158005126497888" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1a" value="0.177252330941141" constant="true"/>
+      <parameter id="k1aBasic" value="0.000394105679186913" constant="true"/>
+      <parameter id="k1b" value="0.174529566448397" constant="true"/>
+      <parameter id="k1c" value="0.050861851404055" constant="true"/>
+      <parameter id="k1d" value="499999.999999974" constant="true"/>
+      <parameter id="k1e" value="1.00000000000005e-06" constant="true"/>
+      <parameter id="k1f" value="499999.990737798" constant="true"/>
+      <parameter id="k1g" value="1931.1338834437" constant="true"/>
+      <parameter id="k1r" value="0.0266983879216281" constant="true"/>
+      <parameter id="k21" value="2.13019897196189" constant="true"/>
+      <parameter id="k22" value="658.762927786248" constant="true"/>
+      <parameter id="k3" value="4.94369803061052e-05" constant="true"/>
+      <parameter id="k_IRSiP_2Step" value="27.0251815150773" constant="true"/>
+      <parameter id="km2" value="1.16168060611079" constant="true"/>
+      <parameter id="km3" value="0.416147033419453" constant="true"/>
+      <parameter id="sigmaY2Step" value="6.75923927778284" constant="true"/>
+      <parameter id="IRS1_P" value="1" constant="false"/>
+      <parameter id="insulin" value="1.2" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="insulin">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 1.2 </cn>
+              <piecewise>
+                <piece>
+                  <cn type="integer"> 0 </cn>
+                  <apply>
+                    <lt/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn type="integer"> 0 </cn>
+                  </apply>
+                </piece>
+                <otherwise>
+                  <cn type="integer"> 1 </cn>
+                </otherwise>
+              </piecewise>
+            </apply>
+            <apply>
+              <times/>
+              <cn> 8.8 </cn>
+              <piecewise>
+                <piece>
+                  <cn type="integer"> 0 </cn>
+                  <apply>
+                    <lt/>
+                    <apply>
+                      <minus/>
+                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                      <cn type="integer"> 4 </cn>
+                    </apply>
+                    <cn type="integer"> 0 </cn>
+                  </apply>
+                </piece>
+                <otherwise>
+                  <cn type="integer"> 1 </cn>
+                </otherwise>
+              </piecewise>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="IRS1_P">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> IRSiP </ci>
+            <ci> k_IRSiP_2Step </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IR" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRins" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> IR </ci>
+                  <ci> k1aBasic </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> IR </ci>
+                  <ci> insulin </ci>
+                  <ci> k1a </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRins" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRins </ci>
+              <ci> k1b </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRins" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRp" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRins </ci>
+              <ci> k1c </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRp" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRiP" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRp </ci>
+              <ci> k1d </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRiP" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRi" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="XXp"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRiP </ci>
+              <apply>
+                <plus/>
+                <ci> k1e </ci>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> XXp </ci>
+                    <ci> k1f </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> XXp </ci>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRp" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRp </ci>
+              <ci> k1g </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRi" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IR" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRi </ci>
+              <ci> k1r </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRS" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRSiP" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IRiP"/>
+          <modifierSpeciesReference species="IRp"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRS </ci>
+              <ci> k21 </ci>
+              <apply>
+                <plus/>
+                <ci> IRp </ci>
+                <apply>
+                  <times/>
+                  <ci> IRiP </ci>
+                  <ci> k22 </ci>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_v_8" name="v_8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IRSiP" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IRS" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRSiP </ci>
+              <ci> km2 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v10_v_9" name="v_9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="XX" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="XXp" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="IRSiP"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> IRSiP </ci>
+              <ci> XX </ci>
+              <ci> k3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v11_v_10" name="v_10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="XXp" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="XX" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <ci> XXp </ci>
+              <ci> km3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
