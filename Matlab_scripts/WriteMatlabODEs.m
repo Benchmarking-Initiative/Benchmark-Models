@@ -112,7 +112,7 @@ end
 
 fprintf(fid,'\n\n%s b) Observables:\n','%');
 for i=1:length(m.Observables.name)
-    if(~strcmp(m.Observables.obsfun{i}(1:11),'spline_pos5'))
+    if(~strncmp(m.Observables.obsfun{i},'spline_pos5',11))
         fprintf(fid,'%s = feval(inline(''%s'',',m.Observables.name{i},Formula2Matlab(m.Observables.obsfun{i}));
         if(~(strcmp(d.ExpData.timePar,'t') || strcmp(d.ExpData.timePar,'time')))
             fprintf(fid,'    ''%s'',...\n',d.ExpData.timePar);
