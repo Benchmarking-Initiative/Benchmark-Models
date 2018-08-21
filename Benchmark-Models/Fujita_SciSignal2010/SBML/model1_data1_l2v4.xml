@@ -23,25 +23,25 @@
       <species id="EGF_EGFR" name="EGF_EGFR" compartment="Cell" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="EGFR_turnover" value="0.001449799125736" constant="true"/>
-      <parameter id="init_AKT" value="0.00332683237159935" constant="true"/>
-      <parameter id="init_EGFR" value="22650805.5977911" constant="true"/>
-      <parameter id="init_S6" value="205.86301335244" constant="true"/>
-      <parameter id="reaction_1_k1" value="0.00372345533395159" constant="true"/>
-      <parameter id="reaction_1_k2" value="0.00262709856442467" constant="true"/>
-      <parameter id="reaction_2_k1" value="0.00103236148008131" constant="true"/>
-      <parameter id="reaction_2_k2" value="41469.6914053245" constant="true"/>
-      <parameter id="reaction_3_k1" value="0.454840577578597" constant="true"/>
-      <parameter id="reaction_4_k1" value="0.0308146966905863" constant="true"/>
-      <parameter id="reaction_5_k1" value="2.9643709900602e-06" constant="true"/>
-      <parameter id="reaction_5_k2" value="0.000404055756190126" constant="true"/>
-      <parameter id="reaction_6_k1" value="9.20585474645043e-06" constant="true"/>
-      <parameter id="reaction_7_k1" value="0.0119329694583145" constant="true"/>
-      <parameter id="reaction_8_k1" value="0.000941161525754959" constant="true"/>
-      <parameter id="reaction_9_k1" value="0.0273281571867514" constant="true"/>
-      <parameter id="scaleFactor_pAkt" value="334.979345701912" constant="true"/>
-      <parameter id="scaleFactor_pEGFR" value="9.60908283106834e-08" constant="true"/>
-      <parameter id="scaleFactor_pS6" value="380222.792056961" constant="true"/>
+      <parameter id="EGFR_turnover" value="0.00147961456271947" constant="true"/>
+      <parameter id="init_Akt" value="0.0269309230290491" constant="true"/>
+      <parameter id="init_EGFR" value="37536153.8059105" constant="true"/>
+      <parameter id="init_S6" value="188.063148677911" constant="true"/>
+      <parameter id="reaction_1_k1" value="0.00369076612911148" constant="true"/>
+      <parameter id="reaction_1_k2" value="0.0023011754860046" constant="true"/>
+      <parameter id="reaction_2_k1" value="0.00093650080821119" constant="true"/>
+      <parameter id="reaction_2_k2" value="60965.206664259" constant="true"/>
+      <parameter id="reaction_3_k1" value="0.433225051651771" constant="true"/>
+      <parameter id="reaction_4_k1" value="0.0301551774230236" constant="true"/>
+      <parameter id="reaction_5_k1" value="3.27310803801899e-06" constant="true"/>
+      <parameter id="reaction_5_k2" value="0.000398546299781537" constant="true"/>
+      <parameter id="reaction_6_k1" value="5.46319692934549e-06" constant="true"/>
+      <parameter id="reaction_7_k1" value="0.0118032083117347" constant="true"/>
+      <parameter id="reaction_8_k1" value="0.000944761775112582" constant="true"/>
+      <parameter id="reaction_9_k1" value="0.0285107984794381" constant="true"/>
+      <parameter id="scaleFactor_pAkt" value="41.3771031603844" constant="true"/>
+      <parameter id="scaleFactor_pEGFR" value="5.64785460492805e-08" constant="true"/>
+      <parameter id="scaleFactor_pS6" value="78521.9513232791" constant="true"/>
       <parameter id="sd_pAkt_tot" value="0.1" constant="true"/>
       <parameter id="sd_pEGFR_tot" value="0.1" constant="true"/>
       <parameter id="sd_pS6_tot" value="0.1" constant="true"/>
@@ -58,7 +58,7 @@
       </initialAssignment>
       <initialAssignment symbol="Akt">
         <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <ci> init_AKT </ci>
+          <ci> init_Akt </ci>
         </math>
       </initialAssignment>
       <initialAssignment symbol="S6">
