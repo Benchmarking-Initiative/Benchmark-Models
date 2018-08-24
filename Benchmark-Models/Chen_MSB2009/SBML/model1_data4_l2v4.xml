@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
-  <model metaid="arFramework3" id="model_ChenMSB2009">
+  <model metaid="arFramework3" id="model_ChenMSB2009_sin">
     <listOfUnitDefinitions>
       <unitDefinition id="time" name="time">
         <listOfUnits>
@@ -514,32 +514,32 @@
       <species id="c558" name="(EGF:ErbB1:ATP::EGF:ErbB1_h:Inh)-HalfActive" compartment="cyt" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="AKT_t" value="905000" constant="true"/>
-      <parameter id="EGFR_t" value="1080000" constant="true"/>
-      <parameter id="ERK_t" value="695000" constant="true"/>
+      <parameter id="AKT_t" value="10000" constant="true"/>
+      <parameter id="EGFR_t" value="10000" constant="true"/>
+      <parameter id="ERK_t" value="10000" constant="true"/>
       <parameter id="k101" value="8.33000000000001e-07" constant="true"/>
       <parameter id="k102" value="5e-07" constant="true"/>
       <parameter id="k103" value="8.36983000000001e-09" constant="true"/>
-      <parameter id="k104" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k104" value="0" constant="true"/>
       <parameter id="k105" value="6.67e-05" constant="true"/>
       <parameter id="k106" value="1.33e-05" constant="true"/>
       <parameter id="k106b" value="2.63418e-08" constant="true"/>
       <parameter id="k107" value="3.33e-05" constant="true"/>
-      <parameter id="k108" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k108" value="0" constant="true"/>
       <parameter id="k109" value="5e-06" constant="true"/>
       <parameter id="k10b" value="0.05426" constant="true"/>
       <parameter id="k110" value="0.000333" constant="true"/>
-      <parameter id="k111" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k111" value="0" constant="true"/>
       <parameter id="k112" value="0.0047067" constant="true"/>
-      <parameter id="k113" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k113" value="0" constant="true"/>
       <parameter id="k114" value="4.98816e-06" constant="true"/>
-      <parameter id="k115" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k115" value="0" constant="true"/>
       <parameter id="k117" value="8.33000000000001e-08" constant="true"/>
-      <parameter id="k118" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k118" value="0" constant="true"/>
       <parameter id="k120" value="1.48131e-08" constant="true"/>
       <parameter id="k120b" value="5.92538000000001e-11" constant="true"/>
-      <parameter id="k123" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k123h" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k123" value="0" constant="true"/>
+      <parameter id="k123h" value="0" constant="true"/>
       <parameter id="k15" value="1.667e-08" constant="true"/>
       <parameter id="k16" value="1.67e-05" constant="true"/>
       <parameter id="k17" value="1.67e-05" constant="true"/>
@@ -564,22 +564,22 @@
       <parameter id="k40" value="5e-05" constant="true"/>
       <parameter id="k41" value="5e-05" constant="true"/>
       <parameter id="k42" value="6e-05" constant="true"/>
-      <parameter id="k43" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k43" value="0" constant="true"/>
       <parameter id="k44" value="1.07e-05" constant="true"/>
-      <parameter id="k45" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k47" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k45" value="0" constant="true"/>
+      <parameter id="k47" value="0" constant="true"/>
       <parameter id="k48" value="2.37e-05" constant="true"/>
-      <parameter id="k49" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k4b" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k5" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k49" value="0" constant="true"/>
+      <parameter id="k4b" value="0" constant="true"/>
+      <parameter id="k5" value="0" constant="true"/>
       <parameter id="k50" value="4.74801e-08" constant="true"/>
       <parameter id="k52" value="8.85125e-06" constant="true"/>
-      <parameter id="k53" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k55" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k53" value="0" constant="true"/>
+      <parameter id="k55" value="0" constant="true"/>
       <parameter id="k56" value="0.000397392" constant="true"/>
-      <parameter id="k57" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k57" value="0" constant="true"/>
       <parameter id="k58" value="8.33000000000001e-07" constant="true"/>
-      <parameter id="k5b" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k5b" value="0" constant="true"/>
       <parameter id="k6" value="0.013" constant="true"/>
       <parameter id="k60" value="0.00266742" constant="true"/>
       <parameter id="k60b" value="0.0471248" constant="true"/>
@@ -587,25 +587,25 @@
       <parameter id="k61" value="0.00057" constant="true"/>
       <parameter id="k62b" value="0.000416" constant="true"/>
       <parameter id="k64" value="1.67e-05" constant="true"/>
-      <parameter id="k65" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k65" value="0" constant="true"/>
       <parameter id="k66" value="1.5e-05" constant="true"/>
       <parameter id="k67" value="5e-05" constant="true"/>
-      <parameter id="k68" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k68" value="0" constant="true"/>
       <parameter id="k69" value="3.33e-05" constant="true"/>
-      <parameter id="k6b" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k6b" value="0" constant="true"/>
       <parameter id="k7" value="5e-05" constant="true"/>
       <parameter id="k70" value="6.67e-07" constant="true"/>
-      <parameter id="k71" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k72" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k71" value="0" constant="true"/>
+      <parameter id="k72" value="0" constant="true"/>
       <parameter id="k73" value="0.00374845" constant="true"/>
       <parameter id="k74" value="6.36183999999999e-07" constant="true"/>
-      <parameter id="k75" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="k76" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k75" value="0" constant="true"/>
+      <parameter id="k76" value="0" constant="true"/>
       <parameter id="k8" value="5.91474e-07" constant="true"/>
       <parameter id="k8b" value="9.34641e-06" constant="true"/>
       <parameter id="k94" value="5e-05" constant="true"/>
       <parameter id="k94b" value="5e-05" constant="true"/>
-      <parameter id="k95" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="k95" value="0" constant="true"/>
       <parameter id="k96" value="1.67e-06" constant="true"/>
       <parameter id="kd10" value="0.011" constant="true"/>
       <parameter id="kd100" value="0.001" constant="true"/>
@@ -625,14 +625,14 @@
       <parameter id="kd113" value="177.828" constant="true"/>
       <parameter id="kd114" value="0.1" constant="true"/>
       <parameter id="kd115" value="1" constant="true"/>
-      <parameter id="kd116" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="kd116" value="0" constant="true"/>
       <parameter id="kd117" value="0.1" constant="true"/>
       <parameter id="kd118" value="0.03" constant="true"/>
       <parameter id="kd119" value="0.0103115" constant="true"/>
       <parameter id="kd120" value="0.1" constant="true"/>
       <parameter id="kd123" value="0.177828" constant="true"/>
       <parameter id="kd123h" value="0.1" constant="true"/>
-      <parameter id="kd15" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="kd15" value="0" constant="true"/>
       <parameter id="kd17" value="0.06" constant="true"/>
       <parameter id="kd18" value="1.3" constant="true"/>
       <parameter id="kd19" value="0.5" constant="true"/>
@@ -651,7 +651,7 @@
       <parameter id="kd33" value="0.2" constant="true"/>
       <parameter id="kd34" value="0.03" constant="true"/>
       <parameter id="kd35" value="0.0015" constant="true"/>
-      <parameter id="kd36" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="kd36" value="0" constant="true"/>
       <parameter id="kd37" value="0.3" constant="true"/>
       <parameter id="kd4" value="0.000166" constant="true"/>
       <parameter id="kd40" value="0.064" constant="true"/>
@@ -672,9 +672,9 @@
       <parameter id="kd57" value="0.0076" constant="true"/>
       <parameter id="kd58" value="56.7862" constant="true"/>
       <parameter id="kd5b" value="0.0080833" constant="true"/>
-      <parameter id="kd60" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="kd60b" value="2.22044604925032e-16" constant="true"/>
-      <parameter id="kd61" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="kd60" value="0" constant="true"/>
+      <parameter id="kd60b" value="0" constant="true"/>
+      <parameter id="kd61" value="0" constant="true"/>
       <parameter id="kd63" value="0.275" constant="true"/>
       <parameter id="kd64" value="0.3" constant="true"/>
       <parameter id="kd65" value="0.2" constant="true"/>
@@ -683,7 +683,7 @@
       <parameter id="kd68" value="0.2" constant="true"/>
       <parameter id="kd68b" value="20.5" constant="true"/>
       <parameter id="kd69" value="0.1" constant="true"/>
-      <parameter id="kd6b" value="2.22044604925032e-16" constant="true"/>
+      <parameter id="kd6b" value="0" constant="true"/>
       <parameter id="kd7" value="0.000138" constant="true"/>
       <parameter id="kd70" value="0.1" constant="true"/>
       <parameter id="kd71" value="25.2" constant="true"/>
@@ -704,20 +704,19 @@
       <parameter id="sd_AKT_PP" value="0.1" constant="true"/>
       <parameter id="sd_ERB_B1_P_tot" value="0.1" constant="true"/>
       <parameter id="sd_ERK_PP" value="0.1" constant="true"/>
-      <parameter id="ERB_B1_P_tot" value="1" constant="false"/>
-      <parameter id="ERK_PP" value="1" constant="false"/>
-      <parameter id="AKT_PP" value="1" constant="false"/>
+      <parameter id="ERB_B1_P_tot" value="0" constant="false"/>
+      <parameter id="ERK_PP" value="0" constant="false"/>
+      <parameter id="AKT_PP" value="0" constant="false"/>
       <parameter id="c1" value="0" constant="false"/>
       <parameter id="c515" value="0" constant="false"/>
       <parameter id="c285" value="0" constant="false"/>
       <parameter id="c514" value="1e-10" constant="false"/>
       <parameter id="Step10Mio" value="0" constant="false"/>
       <parameter id="Step33" value="0" constant="false"/>
-      <parameter id="Step0" value="0" constant="false"/>
       <parameter id="Step1" value="0" constant="false"/>
       <parameter id="StepMini" value="0" constant="false"/>
       <parameter id="Step5" value="0" constant="false"/>
-      <parameter id="StepGrml" value="0" constant="false"/>
+      <parameter id="StepLate" value="0" constant="false"/>
     </listOfParameters>
     <listOfRules>
       <assignmentRule variable="c1">
@@ -744,14 +743,9 @@
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
-              <apply>
-                <minus/>
-                <cn type="integer"> 10000000 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
+              <cn type="integer"> 10000000 </cn>
               <piecewise>
                 <piece>
                   <cn type="integer"> 0 </cn>
@@ -769,6 +763,67 @@
                   <cn type="integer"> 1 </cn>
                 </otherwise>
               </piecewise>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 1799.99 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 10000000 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn> 1799.99 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 10000000 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn type="integer"> 1800 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+              </apply>
             </apply>
           </apply>
         </math>
@@ -777,14 +832,9 @@
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
-              <apply>
-                <minus/>
-                <cn> 0.0033 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
+              <cn> 0.0033 </cn>
               <piecewise>
                 <piece>
                   <cn type="integer"> 0 </cn>
@@ -803,38 +853,66 @@
                 </otherwise>
               </piecewise>
             </apply>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule variable="Step0">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
               <apply>
-                <minus/>
-                <cn type="integer"> 0 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
-              <piecewise>
-                <piece>
-                  <cn type="integer"> 0 </cn>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
                   <apply>
-                    <lt/>
-                    <apply>
-                      <minus/>
-                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
-                      <cn type="integer"> 1800 </cn>
-                    </apply>
-                    <cn type="integer"> 0 </cn>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 1799.99 </cn>
                   </apply>
-                </piece>
-                <otherwise>
-                  <cn type="integer"> 1 </cn>
-                </otherwise>
-              </piecewise>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn> 0.0033 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn> 1799.99 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn> 0.0033 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn type="integer"> 1800 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+              </apply>
             </apply>
           </apply>
         </math>
@@ -843,31 +921,75 @@
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
-            <cn type="integer"> 0 </cn>
+            <piecewise>
+              <piece>
+                <cn type="integer"> 0 </cn>
+                <apply>
+                  <lt/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn type="integer"> 1800 </cn>
+                  </apply>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <cn type="integer"> 1 </cn>
+              </otherwise>
+            </piecewise>
             <apply>
               <times/>
               <apply>
-                <minus/>
-                <cn type="integer"> 1 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
-              <piecewise>
-                <piece>
-                  <cn type="integer"> 0 </cn>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
                   <apply>
-                    <lt/>
-                    <apply>
-                      <minus/>
-                      <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
-                      <cn type="integer"> 1800 </cn>
-                    </apply>
-                    <cn type="integer"> 0 </cn>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 1799.99 </cn>
                   </apply>
-                </piece>
-                <otherwise>
-                  <cn type="integer"> 1 </cn>
-                </otherwise>
-              </piecewise>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <piecewise>
+                  <piece>
+                    <cn type="integer"> 0 </cn>
+                    <apply>
+                      <lt/>
+                      <apply>
+                        <minus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                        <cn> 1799.99 </cn>
+                      </apply>
+                      <cn type="integer"> 0 </cn>
+                    </apply>
+                  </piece>
+                  <otherwise>
+                    <cn type="integer"> 1 </cn>
+                  </otherwise>
+                </piecewise>
+                <piecewise>
+                  <piece>
+                    <cn type="integer"> 0 </cn>
+                    <apply>
+                      <lt/>
+                      <apply>
+                        <minus/>
+                        <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                        <cn type="integer"> 1800 </cn>
+                      </apply>
+                      <cn type="integer"> 0 </cn>
+                    </apply>
+                  </piece>
+                  <otherwise>
+                    <cn type="integer"> 1 </cn>
+                  </otherwise>
+                </piecewise>
+              </apply>
             </apply>
           </apply>
         </math>
@@ -876,14 +998,9 @@
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
-              <apply>
-                <minus/>
-                <cn type="e-notation"> 1.8704 <sep/> -8 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
+              <cn type="e-notation"> 1.8704 <sep/> -8 </cn>
               <piecewise>
                 <piece>
                   <cn type="integer"> 0 </cn>
@@ -901,6 +1018,67 @@
                   <cn type="integer"> 1 </cn>
                 </otherwise>
               </piecewise>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 1799.99 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn type="e-notation"> 1.8704 <sep/> -8 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn> 1799.99 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="e-notation"> 1.8704 <sep/> -8 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn type="integer"> 1800 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+              </apply>
             </apply>
           </apply>
         </math>
@@ -909,14 +1087,9 @@
         <math xmlns="http://www.w3.org/1998/Math/MathML">
           <apply>
             <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
-              <apply>
-                <minus/>
-                <cn type="e-notation"> 5 <sep/> -5 </cn>
-                <cn type="integer"> 0 </cn>
-              </apply>
+              <cn type="e-notation"> 5 <sep/> -5 </cn>
               <piecewise>
                 <piece>
                   <cn type="integer"> 0 </cn>
@@ -935,21 +1108,77 @@
                 </otherwise>
               </piecewise>
             </apply>
-          </apply>
-        </math>
-      </assignmentRule>
-      <assignmentRule variable="StepGrml">
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-          <apply>
-            <plus/>
-            <cn type="integer"> 0 </cn>
             <apply>
               <times/>
               <apply>
-                <minus/>
-                <cn type="e-notation"> 5 <sep/> -5 </cn>
-                <cn type="integer"> 0 </cn>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 1799.99 </cn>
+                  </apply>
+                </apply>
               </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn type="e-notation"> 5 <sep/> -5 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn> 1799.99 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn type="e-notation"> 5 <sep/> -5 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn type="integer"> 1800 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="StepLate">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <cn> 0.0150356 </cn>
               <piecewise>
                 <piece>
                   <cn type="integer"> 0 </cn>
@@ -958,7 +1187,7 @@
                     <apply>
                       <minus/>
                       <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
-                      <cn type="integer"> 1800 </cn>
+                      <cn type="integer"> 2660 </cn>
                     </apply>
                     <cn type="integer"> 0 </cn>
                   </apply>
@@ -967,6 +1196,67 @@
                   <cn type="integer"> 1 </cn>
                 </otherwise>
               </piecewise>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <sin/>
+                <apply>
+                  <times/>
+                  <cn> 50 </cn>
+                  <pi/>
+                  <apply>
+                    <minus/>
+                    <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                    <cn> 2659.99 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <cn> 0.0150356 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn> 2659.99 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+                <apply>
+                  <times/>
+                  <cn> 0.0150356 </cn>
+                  <piecewise>
+                    <piece>
+                      <cn type="integer"> 0 </cn>
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <minus/>
+                          <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                          <cn type="integer"> 2660 </cn>
+                        </apply>
+                        <cn type="integer"> 0 </cn>
+                      </apply>
+                    </piece>
+                    <otherwise>
+                      <cn type="integer"> 1 </cn>
+                    </otherwise>
+                  </piecewise>
+                </apply>
+              </apply>
             </apply>
           </apply>
         </math>
@@ -26733,7 +27023,7 @@
                 <minus/>
                 <apply>
                   <times/>
-                  <ci> StepGrml </ci>
+                  <ci> StepLate </ci>
                   <ci> c60 </ci>
                 </apply>
                 <apply>
