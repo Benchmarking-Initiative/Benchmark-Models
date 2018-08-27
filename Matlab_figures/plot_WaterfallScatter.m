@@ -10,20 +10,17 @@ legend_string = {};
 colors = lines(3);
 
 for im = 1:length(modelNrs)
-   
+    figure('PaperUnits','centimeters','PaperSize',[21 29.7])
+    subplot(2,1,1)
     modelNr = modelNrs{im};
     model_name = strsplit(modelNrs{im},'_');
-    model_name = model_name{2};
-    if strcmp(model_name,'Reelin')
-        model_name = 'Hass';
-    end
-    if strcmp(model_name,'TGFb')
-        model_name = 'Lucarelli';
-    end
     
-    figure('Name',['Waterfall ' model_name],...
-        'PaperUnits','centimeters','PaperSize',[21 29.7])
-    subplot(2,1,1)
+    if strcmp(model_name{2},'Reelin')
+        model_name{2} = 'Hass';
+    end
+    if strcmp(model_name{2},'TGFb')
+        model_name{2} = 'Lucarelli';
+    end
     
     min_model = min([ar_tmp.(modelNr).fmin_ip_log.chi2s,...
         ar_tmp.(modelNr).fmin_trust_FindInputs_log.chi2s,ar_tmp.(modelNr).FindInputs_logFit.chi2s]);
@@ -49,13 +46,13 @@ for im = 1:length(modelNrs)
     
     set(gcf,'Color','w')
     xlabel('fit number')
-    ylabel('final likelihood value')
-    title([model_name])
+    ylabel('final likelihood value + const.')
+    title([model_name{2}])
     box off
     
     set(gca,'FontSize',14)
     axis manual
-    if ismember(model_name,{'Beer','Crauste'})
+    if ismember(model_name{2},{'Beer','Crauste'})
         legend(legend_string,'Location','southeast')
     else
         legend(legend_string,'Location','northwest')
@@ -84,7 +81,7 @@ for im = 1:length(modelNrs)
     end
     set(gcf,'Color','w')
     xlabel('optimization time [s]')
-    ylabel('final likelihood value')
+    ylabel('final likelihood value + const.')
     axis manual
     x_limits = get(gca,'XLim');
     y_limits = get(gca,'YLim');
@@ -93,9 +90,6 @@ for im = 1:length(modelNrs)
     text(10.^(log10(x_limits(1)) - (log10(x_limits(2)) - log10(x_limits(1)))*0.15),...
         y_limits(2)+(y_limits(2)-y_limits(1))*0.2,'B','FontSize',16)
     
-%     if ~(exist('Supplement_figures'))
-%         mkdir('Supplement_figures')
-%     end
-%     print(gcf,['Supplement_figures/' model_name],'-dpdf','-fillpage')
+    print(gcf,['Supplement_figures/' model_name{2}],'-dpdf','-fillpage')
 end
-%close all
+close all
