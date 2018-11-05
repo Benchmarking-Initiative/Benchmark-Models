@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="model_Sneyd_PNAS2002">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="membrane" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="IPR_O" name="O" compartment="membrane" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPR_R" name="R" compartment="membrane" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPR_I1" name="I_1" compartment="membrane" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPR_S" name="S" compartment="membrane" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPR_A" name="A" compartment="membrane" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="IPR_I2" name="I_2" compartment="membrane" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="k1" value="3.72721095730996" constant="true"/>
+      <parameter id="k2" value="99999.9999999914" constant="true"/>
+      <parameter id="k3" value="15.7453406923705" constant="true"/>
+      <parameter id="k4" value="99938.2576283137" constant="true"/>
+      <parameter id="k_1" value="0.923924728172175" constant="true"/>
+      <parameter id="k_2" value="0.00100249472532433" constant="true"/>
+      <parameter id="k_3" value="1.91463005974811" constant="true"/>
+      <parameter id="k_4" value="3079.207324879" constant="true"/>
+      <parameter id="l2" value="0.940077018858088" constant="true"/>
+      <parameter id="l4" value="2.85837713545253" constant="true"/>
+      <parameter id="l6" value="99999.9999999914" constant="true"/>
+      <parameter id="l_2" value="0.347664459128102" constant="true"/>
+      <parameter id="l_4" value="0.0138802036171304" constant="true"/>
+      <parameter id="l_6" value="0.00100000000000008" constant="true"/>
+      <parameter id="sigma" value="0.0226656795444614" constant="true"/>
+      <parameter id="open_probability" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="open_probability">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <power/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <cn> 0.9 </cn>
+                <ci> IPR_A </ci>
+              </apply>
+              <apply>
+                <times/>
+                <cn> 0.1 </cn>
+                <ci> IPR_O </ci>
+              </apply>
+            </apply>
+            <cn type="integer"> 4 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="v1_v_0" name="v_0" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_R" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> IPR_O </ci>
+                  <apply>
+                    <plus/>
+                    <ci> k_2 </ci>
+                    <apply>
+                      <times/>
+                      <cn> 0.1 </cn>
+                      <ci> l_4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.1 </cn>
+                      <ci> k4 </ci>
+                      <ci> l_6 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k_4 </ci>
+                      <ci> l6 </ci>
+                    </apply>
+                  </apply>
+                  <cn type="integer"> 1 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v2_v_1" name="v_1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_R" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn type="integer"> 10 </cn>
+                  <ci> IPR_R </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <times/>
+                      <cn> 0.1 </cn>
+                      <ci> l4 </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_2 </ci>
+                        <ci> l4 </ci>
+                      </apply>
+                      <ci> l_4 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> k_2 </ci>
+                      <ci> l4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k2 </ci>
+                      <ci> l_4 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.1 </cn>
+                      <ci> k1 </ci>
+                      <ci> k_2 </ci>
+                      <ci> l4 </ci>
+                      <ci> l_2 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k2 </ci>
+                      <ci> k_1 </ci>
+                      <ci> l2 </ci>
+                      <ci> l_4 </ci>
+                    </apply>
+                  </apply>
+                  <cn> 0.1 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v3_v_2" name="v_2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_R" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_I1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.1 </cn>
+                  <ci> IPR_R </ci>
+                  <apply>
+                    <plus/>
+                    <ci> l2 </ci>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_1 </ci>
+                        <ci> l2 </ci>
+                      </apply>
+                      <ci> l_2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> k_1 </ci>
+                      <ci> l2 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k1 </ci>
+                      <ci> l_2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <cn> 0.1 </cn>
+                      <ci> k2 </ci>
+                      <ci> k_1 </ci>
+                      <ci> l2 </ci>
+                      <ci> l_4 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k1 </ci>
+                      <ci> k_2 </ci>
+                      <ci> l4 </ci>
+                      <ci> l_2 </ci>
+                    </apply>
+                  </apply>
+                  <cn> 0.1 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v4_v_3" name="v_3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_I1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_R" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <ci> IPR_I1 </ci>
+              <apply>
+                <plus/>
+                <ci> k_1 </ci>
+                <ci> l_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v5_v_4" name="v_4" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_A" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.1 </cn>
+                  <ci> IPR_O </ci>
+                  <apply>
+                    <plus/>
+                    <ci> l6 </ci>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_4 </ci>
+                        <ci> l6 </ci>
+                      </apply>
+                      <ci> l_6 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> k_4 </ci>
+                      <ci> l6 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k4 </ci>
+                      <ci> l_6 </ci>
+                    </apply>
+                  </apply>
+                  <cn> 0.1 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v6_v_5" name="v_5" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_A" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> IPR_A </ci>
+                  <ci> k_1 </ci>
+                  <ci> l2 </ci>
+                  <apply>
+                    <plus/>
+                    <ci> k_4 </ci>
+                    <ci> l_6 </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> l_2 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_1 </ci>
+                        <ci> l2 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> k1 </ci>
+                        <ci> l_2 </ci>
+                      </apply>
+                    </apply>
+                    <cn> 0.1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v7_v_6" name="v_6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_A" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_I2" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.1 </cn>
+                  <ci> IPR_A </ci>
+                  <apply>
+                    <plus/>
+                    <ci> l2 </ci>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_1 </ci>
+                        <ci> l2 </ci>
+                      </apply>
+                      <ci> l_2 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> k_1 </ci>
+                      <ci> l2 </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> k1 </ci>
+                      <ci> l_2 </ci>
+                    </apply>
+                  </apply>
+                  <cn> 0.1 </cn>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v8_v_7" name="v_7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_I2" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_A" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <ci> IPR_I2 </ci>
+              <apply>
+                <plus/>
+                <ci> k_1 </ci>
+                <ci> l_2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v9_v_8" name="v_8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_S" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> IPR_O </ci>
+                  <ci> k3 </ci>
+                  <ci> k_4 </ci>
+                  <ci> l6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> k4 </ci>
+                  <ci> l_6 </ci>
+                  <apply>
+                    <plus/>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> k_4 </ci>
+                        <ci> l6 </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> k4 </ci>
+                        <ci> l_6 </ci>
+                      </apply>
+                    </apply>
+                    <cn> 0.1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="v10_v_9" name="v_9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="IPR_S" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="IPR_O" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> membrane </ci>
+              <ci> IPR_S </ci>
+              <ci> k_3 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
