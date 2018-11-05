@@ -25,10 +25,13 @@ basefolder = strrep(fileparts(which('Example_SimulationWithMatlab.m')),'Matlab_s
 % modelfolder = 'Merkle_PCB2016'; % ok 
 % modelfolder = 'Raia_CancerResearch2011'; % ok
 % modelfolder = 'Schwen_PONE2014'; % ok
-% modelfolder = 'Sobotta_Frontiers2017';  Fehler
-% modelfolder = 'Swameye_PNAS2003'; % splinepos5 klappt nicht
+% modelfolder = 'Sobotta_Frontiers2017';  ok
+% modelfolder = 'Swameye_PNAS2003'; % ij
 % modelfolder = 'Schwen_PONE2014'; % ok
 % modelfolder = 'Zheng_PNAS2012'; % ok
+% modelfolder = 'Elowitz_Nature2000'; % ok
+% modelfolder = 'Borghans_BiophysChem1997'; % ok
+% modelfolder = 'Sneyd_PNAS2002'; % ok
 
 list_examples = {'Becker_Science2010';
     'Bachmann_MSB2011';
