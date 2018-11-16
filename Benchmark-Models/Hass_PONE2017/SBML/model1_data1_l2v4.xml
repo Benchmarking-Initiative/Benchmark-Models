@@ -23,42 +23,42 @@
       <species id="SFK" name="SFK" compartment="DefaultCompartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="ApoER2_Dab1_SFK_degrad" value="0.0126474440051268" constant="true"/>
-      <parameter id="ApoER2_Dab1_SFK_recycle" value="2.65673802817612" constant="true"/>
-      <parameter id="ApoER2_Dab1_SFK_release" value="2019.25315011036" constant="true"/>
+      <parameter id="ApoER2_Dab1_SFK_degrad" value="0.0123301586132219" constant="true"/>
+      <parameter id="ApoER2_Dab1_SFK_recycle" value="2.49701470433571" constant="true"/>
+      <parameter id="ApoER2_Dab1_SFK_release" value="1957.94102069474" constant="true"/>
       <parameter id="ApoER2_Dab1_act" value="10000" constant="true"/>
-      <parameter id="ApoER2_Dab1_bind_SFK" value="124.0375795631" constant="true"/>
-      <parameter id="ApoER2_Dab1_bind_SFK_Reelin" value="215831.173833982" constant="true"/>
-      <parameter id="Dab1_bind_Reelin" value="0.0148120036136757" constant="true"/>
-      <parameter id="Dab1_release" value="0.0521739008463977" constant="true"/>
-      <parameter id="SFK_inhibition_ratio" value="0.454698670967263" constant="true"/>
+      <parameter id="ApoER2_Dab1_bind_SFK" value="110.945789806566" constant="true"/>
+      <parameter id="ApoER2_Dab1_bind_SFK_Reelin" value="158602.035531752" constant="true"/>
+      <parameter id="Dab1_bind_Reelin" value="0.0138353182089083" constant="true"/>
+      <parameter id="Dab1_release" value="0.0595417937017265" constant="true"/>
+      <parameter id="SFK_inhibition_ratio" value="0.470718626534915" constant="true"/>
       <parameter id="init_ApoER2_Dab1" value="1" constant="true"/>
-      <parameter id="init_ApoER2_Dab1SFK" value="9.31189596270054e-05" constant="true"/>
+      <parameter id="init_ApoER2_Dab1SFK" value="8.75097549361293e-05" constant="true"/>
       <parameter id="offset_Dab1_ExpReelinStim" value="1e-08" constant="true"/>
-      <parameter id="offset_pAkt_ExpReelinStim" value="1.09178820990287" constant="true"/>
-      <parameter id="offset_pDab1_ExpReelinStim" value="0.141786427802158" constant="true"/>
-      <parameter id="offset_pSFK_ExpReelinStim" value="1.69422823023983" constant="true"/>
-      <parameter id="offset_tApo_ExpReelinStim" value="2.14443683848" constant="true"/>
-      <parameter id="offset_tSFK_ExpReelinStim" value="0.286864710576542" constant="true"/>
-      <parameter id="perc_mes" value="0.0534168061850265" constant="true"/>
-      <parameter id="scale_Dab1_ExpReelinStim" value="3.75349313857368" constant="true"/>
-      <parameter id="scale_pAkt_ExpReelinStim" value="224.737574712382" constant="true"/>
-      <parameter id="scale_pDab1_ExpReelinStim" value="310.078354570118" constant="true"/>
-      <parameter id="scale_pSFK_ExpReelinStim" value="892.921956684332" constant="true"/>
-      <parameter id="scale_tApo__ExpReelinStim" value="0.912041245924323" constant="true"/>
-      <parameter id="scale_tSFK_ExpReelinStim" value="414.30424250842" constant="true"/>
+      <parameter id="offset_pAkt_ExpReelinStim" value="1.0765276217424" constant="true"/>
+      <parameter id="offset_pDab1_ExpReelinStim" value="0.139887002952305" constant="true"/>
+      <parameter id="offset_pSFK_ExpReelinStim" value="1.67969987743754" constant="true"/>
+      <parameter id="offset_tApo_ExpReelinStim" value="2.14289703948776" constant="true"/>
+      <parameter id="offset_tSFK_ExpReelinStim" value="0.285702110374197" constant="true"/>
+      <parameter id="perc_mes" value="0.0519099251370762" constant="true"/>
+      <parameter id="scale_Dab1_ExpReelinStim" value="3.75639316079464" constant="true"/>
+      <parameter id="scale_pAkt_ExpReelinStim" value="247.542988800985" constant="true"/>
+      <parameter id="scale_pDab1_ExpReelinStim" value="331.276654144682" constant="true"/>
+      <parameter id="scale_pSFK_ExpReelinStim" value="935.434627604922" constant="true"/>
+      <parameter id="scale_tApo__ExpReelinStim" value="0.943343362014992" constant="true"/>
+      <parameter id="scale_tSFK_ExpReelinStim" value="399.010787302916" constant="true"/>
       <parameter id="sd_Dab1" value="0.1" constant="true"/>
       <parameter id="sd_pAkt" value="0.1" constant="true"/>
       <parameter id="sd_pDab1" value="0.1" constant="true"/>
       <parameter id="sd_pSFK" value="0.1" constant="true"/>
       <parameter id="sd_tApoER2" value="0.1" constant="true"/>
       <parameter id="sd_tSFK" value="0.1" constant="true"/>
-      <parameter id="Dab1" value="1" constant="false"/>
-      <parameter id="pDab1" value="1" constant="false"/>
-      <parameter id="pAkt" value="1" constant="false"/>
-      <parameter id="pSFK" value="1" constant="false"/>
-      <parameter id="tSFK" value="1" constant="false"/>
-      <parameter id="tApoER2" value="1" constant="false"/>
+      <parameter id="Dab1" value="0" constant="false"/>
+      <parameter id="pDab1" value="0" constant="false"/>
+      <parameter id="pAkt" value="0" constant="false"/>
+      <parameter id="pSFK" value="0" constant="false"/>
+      <parameter id="tSFK" value="0" constant="false"/>
+      <parameter id="tApoER2" value="0" constant="false"/>
       <parameter id="Reelin_step" value="0" constant="false"/>
     </listOfParameters>
     <listOfInitialAssignments>
