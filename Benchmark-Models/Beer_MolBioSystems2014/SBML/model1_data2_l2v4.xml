@@ -18,17 +18,17 @@
       <species id="Ind" name="Ind" compartment="medium" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="Bacmax_typeIDT1_ExpID1" value="0.690284519507186" constant="true"/>
-      <parameter id="beta_typeIDT1_ExpID1" value="0.00368164556424843" constant="true"/>
-      <parameter id="init_Bac" value="0.0138158290455936" constant="true"/>
-      <parameter id="kdegi_typeIDT1" value="0.00312250927603011" constant="true"/>
-      <parameter id="kdim_typeIDT1" value="5.832396943404e-05" constant="true"/>
-      <parameter id="ksyn_typeIDT1" value="0.0083197123519239" constant="true"/>
-      <parameter id="sd_Bacnorm" value="0.037822714529977" constant="true"/>
-      <parameter id="sd_IndconcNormRange" value="0.0206144674397522" constant="true"/>
-      <parameter id="tau_typeIDT1_ExpID1" value="0.163686586756067" constant="true"/>
-      <parameter id="Bacnorm" value="1" constant="false"/>
-      <parameter id="IndconcNormRange" value="1" constant="false"/>
+      <parameter id="Bacmax_typeIDT1_ExpID1" value="0.691374209484523" constant="true"/>
+      <parameter id="beta_typeIDT1_ExpID1" value="0.00361432725122036" constant="true"/>
+      <parameter id="init_Bac" value="0.0147007946993721" constant="true"/>
+      <parameter id="kdegi_typeIDT1" value="0.00313223123557219" constant="true"/>
+      <parameter id="kdim_typeIDT1" value="5.88467024386635e-05" constant="true"/>
+      <parameter id="ksyn_typeIDT1" value="0.00818552538678268" constant="true"/>
+      <parameter id="sd_Bacnorm" value="0.0370578932854204" constant="true"/>
+      <parameter id="sd_IndconcNormRange" value="0.020393702596959" constant="true"/>
+      <parameter id="tau_typeIDT1_ExpID1" value="0.00203822060638882" constant="true"/>
+      <parameter id="Bacnorm" value="0" constant="false"/>
+      <parameter id="IndconcNormRange" value="0" constant="false"/>
       <parameter id="lag" value="0" constant="false"/>
     </listOfParameters>
     <listOfInitialAssignments>
