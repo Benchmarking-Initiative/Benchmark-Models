@@ -26,7 +26,7 @@ basefolder = strrep(fileparts(which('Example_SimulationWithMatlab.m')),'Matlab_s
 % modelfolder = 'Raia_CancerResearch2011'; % ok
 % modelfolder = 'Schwen_PONE2014'; % ok
 % modelfolder = 'Sobotta_Frontiers2017';  ok
-% modelfolder = 'Swameye_PNAS2003'; % ij
+% modelfolder = 'Swameye_PNAS2003'; % ok
 % modelfolder = 'Schwen_PONE2014'; % ok
 % modelfolder = 'Zheng_PNAS2012'; % ok
 % modelfolder = 'Elowitz_Nature2000'; % ok
@@ -67,6 +67,13 @@ for iex = 21:length(list_examples)
     fprintf('Reading benchmark model in folder %s ...\n',folder)
     if ~exist([name,'.mat'],'file') || forceRead
         [Is,ms,ds] = ReadBenchmarks(folder);
+        
+        %%%   Simulate experimental data?
+        ds = SimulateExpData(ds,1); 
+        %second input is noise of simulated data in terms of std.dev of the known (fitted) model uncertainty
+        %third input, if set, marks the randomseed
+        %%%
+        
         save(name,'Is', 'ms','ds','folder');
     else
         load(name)
