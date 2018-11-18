@@ -18,17 +18,17 @@
       <species id="Ind" name="Ind" compartment="medium" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="Bacmax_typeIDT5_ExpID1" value="0.815598592820176" constant="true"/>
-      <parameter id="beta_typeIDT5_ExpID1" value="0.005596425688365" constant="true"/>
-      <parameter id="init_Bac" value="0.0138158290455936" constant="true"/>
-      <parameter id="kdegi_typeIDT5" value="3.84503314316566" constant="true"/>
-      <parameter id="kdim_typeIDT5" value="18.2157815617592" constant="true"/>
-      <parameter id="ksyn_typeIDT5" value="0.0957872397396438" constant="true"/>
-      <parameter id="sd_Bacnorm" value="0.037822714529977" constant="true"/>
-      <parameter id="sd_IndconcNormRange" value="0.0206144674397522" constant="true"/>
-      <parameter id="tau_typeIDT5_ExpID1" value="223.655024158989" constant="true"/>
-      <parameter id="Bacnorm" value="1" constant="false"/>
-      <parameter id="IndconcNormRange" value="1" constant="false"/>
+      <parameter id="Bacmax_typeIDT5_ExpID1" value="0.825712281969163" constant="true"/>
+      <parameter id="beta_typeIDT5_ExpID1" value="0.00446854764832439" constant="true"/>
+      <parameter id="init_Bac" value="0.0147007946993721" constant="true"/>
+      <parameter id="kdegi_typeIDT5" value="0.174633314765242" constant="true"/>
+      <parameter id="kdim_typeIDT5" value="1.00000000000006e-05" constant="true"/>
+      <parameter id="ksyn_typeIDT5" value="99995.2222554747" constant="true"/>
+      <parameter id="sd_Bacnorm" value="0.0370578932854204" constant="true"/>
+      <parameter id="sd_IndconcNormRange" value="0.020393702596959" constant="true"/>
+      <parameter id="tau_typeIDT5_ExpID1" value="61.6672879376199" constant="true"/>
+      <parameter id="Bacnorm" value="0" constant="false"/>
+      <parameter id="IndconcNormRange" value="0" constant="false"/>
       <parameter id="lag" value="0" constant="false"/>
     </listOfParameters>
     <listOfInitialAssignments>

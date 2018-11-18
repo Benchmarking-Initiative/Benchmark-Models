@@ -6,7 +6,7 @@ forceRead = false; % loads workspace, if available [FASTER]
 
 % Specify a folder/benchmark-model:
 
-basefolder = strrep(fileparts(which('Example_SimulationWithMatlab.m')),'Matlab_scripts','Bechmark-Models');
+basefolder = strrep(fileparts(which('Example_SimulationWithMatlab.m')),'Matlab_scripts','Benchmark-Models');
 
 % NEW CHECKS
 % modelfolder = 'Bachmann_MSB2011';  % ok
@@ -25,17 +25,40 @@ basefolder = strrep(fileparts(which('Example_SimulationWithMatlab.m')),'Matlab_s
 % modelfolder = 'Merkle_PCB2016'; % ok 
 % modelfolder = 'Raia_CancerResearch2011'; % ok
 % modelfolder = 'Schwen_PONE2014'; % ok
-% modelfolder = 'Sobotta_Frontiers2017';  Fehler
-% modelfolder = 'Swameye_PNAS2003'; % splinepos5 klappt nicht
+% modelfolder = 'Sobotta_Frontiers2017';  ok
+% modelfolder = 'Swameye_PNAS2003'; % ok
 % modelfolder = 'Schwen_PONE2014'; % ok
 % modelfolder = 'Zheng_PNAS2012'; % ok
+% modelfolder = 'Elowitz_Nature2000'; % ok
+% modelfolder = 'Borghans_BiophysChem1997'; % ok
+% modelfolder = 'Sneyd_PNAS2002'; % ok
 
-list_examples = {'Becker_Science2010';'Bachmann_MSB2011';'Beer_MolBioSystems2014';'Boehm_JProteomeRes2014';'Bruno_JExpBio2016';'Lucarelli_CellSystems_2018'; ...
-    'Merkle_PCB2016';'Raia_CancerResearch2011';'Hass_PONE2017';'Schwen_PONE2014';'Swameye_PNAS2003'; ...
-    'Brannmark_JBC2010';'Crauste_CellSystems2017';'Weber_BMC2015';'Isensee_JCB2018';'Zheng_PNAS2012';'Fiedler_BMC2016';'Sobotta_Frontiers2017';'Fujita_SciSignal2010';'Chen_MSB2009'};
+list_examples = {'Becker_Science2010';
+    'Bachmann_MSB2011';
+    'Beer_MolBioSystems2014';
+    'Boehm_JProteomeRes2014';
+    'Bruno_JExpBio2016';
+    'Lucarelli_CellSystems_2018'; ...
+    'Merkle_PCB2016';
+    'Raia_CancerResearch2011';
+    'Hass_PONE2017';
+    'Schwen_PONE2014';
+    'Swameye_PNAS2003'; ...
+    'Brannmark_JBC2010';
+    'Crauste_CellSystems2017';
+    'Weber_BMC2015';
+    'Isensee_JCB2018';
+    'Zheng_PNAS2012';
+    'Fiedler_BMC2016';
+    'Sobotta_Frontiers2017';
+    'Fujita_SciSignal2010';
+    'Chen_MSB2009';
+    'Elowitz_Nature2000';
+    'Borghans_BiophysChem1997';
+    'Sneyd_PNAS2002'};
 
 
-for iex = 1:length(list_examples)
+for iex = 21:length(list_examples)
     modelfolder = list_examples{iex};
 
     folder = [basefolder,filesep,modelfolder];
@@ -44,6 +67,13 @@ for iex = 1:length(list_examples)
     fprintf('Reading benchmark model in folder %s ...\n',folder)
     if ~exist([name,'.mat'],'file') || forceRead
         [Is,ms,ds] = ReadBenchmarks(folder);
+        
+        %%%   Simulate experimental data?
+        ds = SimulateExpData(ds,1); 
+        %second input is noise of simulated data in terms of std.dev of the known (fitted) model uncertainty
+        %third input, if set, marks the randomseed
+        %%%
+        
         save(name,'Is', 'ms','ds','folder');
     else
         load(name)

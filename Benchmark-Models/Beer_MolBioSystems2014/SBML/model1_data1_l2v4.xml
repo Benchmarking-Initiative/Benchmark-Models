@@ -18,17 +18,17 @@
       <species id="Ind" name="Ind" compartment="medium" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="Bacmax_typeIDwt_ExpID4" value="0.627257951134641" constant="true"/>
-      <parameter id="beta_typeIDwt_ExpID4" value="0.0062406747956903" constant="true"/>
-      <parameter id="init_Bac" value="0.0138158290455936" constant="true"/>
-      <parameter id="kdegi_typeIDwt" value="0.0107006205413674" constant="true"/>
-      <parameter id="kdim_typeIDwt" value="7.66980188785567e-05" constant="true"/>
-      <parameter id="ksyn_typeIDwt" value="0.00502611983119285" constant="true"/>
-      <parameter id="sd_Bacnorm" value="0.037822714529977" constant="true"/>
-      <parameter id="sd_IndconcNormRange" value="0.0206144674397522" constant="true"/>
-      <parameter id="tau_typeIDwt_ExpID4" value="1044.52421464083" constant="true"/>
-      <parameter id="Bacnorm" value="1" constant="false"/>
-      <parameter id="IndconcNormRange" value="1" constant="false"/>
+      <parameter id="Bacmax_typeIDwt_ExpID4" value="0.624679466036303" constant="true"/>
+      <parameter id="beta_typeIDwt_ExpID4" value="0.00700685523669528" constant="true"/>
+      <parameter id="init_Bac" value="0.0147007946993721" constant="true"/>
+      <parameter id="kdegi_typeIDwt" value="0.0102932576037449" constant="true"/>
+      <parameter id="kdim_typeIDwt" value="6.85510317088843e-05" constant="true"/>
+      <parameter id="ksyn_typeIDwt" value="0.00553308605479755" constant="true"/>
+      <parameter id="sd_Bacnorm" value="0.0370578932854204" constant="true"/>
+      <parameter id="sd_IndconcNormRange" value="0.020393702596959" constant="true"/>
+      <parameter id="tau_typeIDwt_ExpID4" value="1126.30654465543" constant="true"/>
+      <parameter id="Bacnorm" value="0" constant="false"/>
+      <parameter id="IndconcNormRange" value="0" constant="false"/>
       <parameter id="lag" value="0" constant="false"/>
     </listOfParameters>
     <listOfInitialAssignments>
