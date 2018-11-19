@@ -19,13 +19,13 @@ name = {'observables',...
 numbers(:,1) = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','D3:D22');
 numbers(:,2) = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','E3:E22');
 numbers(:,3) = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','F3:F22');
-numbers(:,4) = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','K3:K22');
+numbers(:,4) = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','J3:J22');
 
 [~,model_names] = xlsread([parent_path '/Benchmark-Models/benchmark_model_characteristics.xlsx'],'model_overview','A3:A22');
 
-bounds = [1e0,1e0,1e1,1e1;...
-    43         110       27132         270]
-%          1e2,1.2e2,1e5,2.7e2];
+bounds = [1e0,1e0,1e1,9e0;...
+    43         110       27132         270];
+
 ticks = repmat(10.^[0:5]',1,4);
 ticks_fine = [1:10]' * 10.^[0:5];
 ticks_fine = repmat(ticks_fine(:),1,4);
@@ -51,7 +51,7 @@ for i = 1:size(numbers,2)
     % Bar
     [N,EDGES] = histcounts(scaled_numbers(:,i),5);
     for k = 1:length(N)
-        fill(EDGES([k,k+1,k+1,k]),-i+0.7*N(k)/max(N)*[0,0,1,1],'k','FaceColor',0.9*[1,1,1],'EdgeColor',[1,1,1],'LineWidth',3);
+        fill(EDGES([k,k+1,k+1,k]),-i+0.7*N(k)/max(N)*[0,0,1,1],'k','FaceColor',0.8*[1,1,1],'EdgeColor',[1,1,1],'LineWidth',3);
     end
     % Plot axis
     quiver(0,-i,1.05,0,0,'color','k','MaxHeadSize',0.1);
@@ -69,7 +69,7 @@ for i = 1:size(numbers,2)
     end
     % Plot markers
     for j = 1:size(numbers,1)
-        plot(scaled_numbers(j,i),-i,'o','MarkerFaceColor',colors(j,:),'MarkerEdgeColor',colors(j,:));
+        plot(scaled_numbers(j,i),-i,'o','MarkerSize',3,'MarkerFaceColor',colors(j,:),'MarkerEdgeColor',colors(j,:));
     end
     % Label
     text(1.1,-i,name{i})
@@ -81,8 +81,9 @@ end
 
 legend(lh,model_names,'box','off');
 
-
-
-
 xlim([-0.1,2]);
 box off
+axis off
+set(gcf, 'PaperUnits','centimeters', 'PaperPosition',[0 0 9 12])
+
+[rho,pval]=corr(log(numbers(:,3)),numbers(:,4))
