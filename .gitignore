@@ -1,4 +1,4 @@
 .~lock.*
 *.DS_store
 ~$*
-Matlab_figures/*-eps
+/Matlab_figures/*.eps
